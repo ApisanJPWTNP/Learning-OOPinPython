@@ -1,7 +1,7 @@
-# OOP Object-oriented programming (การเขียนโปรเเกรมเชิงวัตถุ)
-# 1. อ่านง่าย ใช้ซํ้า
-# 2. เอาไว้สําหรับข้อมูลที่มีคุณสมบัติเหมือนกัน (ยานพาหนะ)
-# 3. ทําให้เข้าใจ python มากขึ้น
+# Benefits of OOP Object-oriented programming (การเขียนโปรเเกรมเชิงวัตถุ) 
+# 1. อ่านง่าย ใช้ซํ้า --- abstract, therefore, repeatable
+# 2. เอาไว้สําหรับข้อมูลที่มีคุณสมบัติเหมือนกัน (ยานพาหนะ) --- take advantage of inheritance, reduce redundantcy
+# 3. ทําให้เข้าใจ python มากขึ้น --- to better understand python
 
 #intro
 '''
@@ -85,5 +85,5 @@ class car:
         return 2022-self.year
     def get_mpersec_maxspeed(self):
         return self.max_speed*5/18
-lambo=car("Lamborghini","Aventador",2000,250)
+lambo = car("Lamborghini","Aventador",2000,250)
 print(lambo.info())

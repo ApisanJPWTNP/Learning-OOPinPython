@@ -1,11 +1,11 @@
 class monomial:
     def __init__(self,a,k,is_positive):
-        self.a=a
-        self.k=k
-        self.is_positive=is_positive
+        self.a = a
+        self.k = k
+        self.is_positive = is_positive
     def is_monomial(self):
         for deg in self.k:
-            if deg<0 or not isinstance(deg,int):
+            if deg < 0 or not isinstance(deg,int):
                 return False
             else:
                 return True
@@ -14,7 +14,7 @@ class monomial:
     def is_constant(self):
         x=0
         for m in self.k:
-            if m>0:
+            if m > 0:
                 x+=1
             elif m==0:
                 continue
@@ -41,7 +41,7 @@ class monomial:
                     print ('{}x_0^{}'.format(self.a, self.k[0]),end ="")
                 else:
                     print ('-{}x_0^{}'.format(self.a, self.k[0]),end ="")
-        n=1
+        n = 1
         while n!=len(self.k)-1:
             if self.k[n]==0:
                 print('')
@@ -57,6 +57,7 @@ class monomial:
                 return ""
             else:
                 return 'x_{}^{}'.format(n,self.k[n])
+            
 def is_it_similar(k1,k2):
     if len(k1)!=len(k2):
         return False
@@ -69,6 +70,7 @@ def is_it_similar(k1,k2):
             return False
         else:
             return True
+        
 def add_monomial(a1,k1,is_positive1,a2,k2,is_positive2):
     if is_it_similar(k1,k2)==True:
         if is_positive1==False:
@@ -82,6 +84,7 @@ def add_monomial(a1,k1,is_positive1,a2,k2,is_positive2):
         return monomial(abs(a1+a2),k1,is_positive).in_math_term()
     else:
         return ("can't be added")
+    
 def multiply_monomial(a1,k1,is_positive1,a2,k2,is_positive2):
     c=[]
     for i in range(0,min(len(k1),len(k2))):
@@ -98,6 +101,7 @@ def multiply_monomial(a1,k1,is_positive1,a2,k2,is_positive2):
     else:
         is_positive=True
     return monomial(abs(a1*a2),c,is_positive).in_math_term()
+
 def perfect_square(a):
     psl=[]
     for i in range(1,a+1):
@@ -105,6 +109,7 @@ def perfect_square(a):
     for i in range(0,a):
         if (psl[i]%a==0):
             return psl[i]//a
+        
 def complementary_monomial(a1,k1,is_positive1):
     powerlist=[]
     for i in k1:
